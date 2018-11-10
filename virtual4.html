@@ -1,0 +1,394 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>chetandewan virtual</title>
+<!--[if !mso]>
+<style> li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+</style>
+<![endif]-->
+</head>
+
+<body bgcolor="#C0C0C0">
+
+<table border="0" cellpadding="0" cellspacing="0" width="1058" height="1446" bordercolordark="#000000" bordercolorlight="#808080">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="middle" colspan="3" bgcolor="#808080">
+		<!-- MSCellType="ContentHead" -->
+		<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj2" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="1046" height="102">
+			<param name="movie" value="top.swf">
+			<param name="quality" value="High">
+			<embed src="top.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj2" width="1046" height="102"></object>
+		</td>
+	<td bgcolor="#808080"></td>
+	<td bgcolor="#808080" height="115"></td>
+	</tr>
+	<tr>
+		<td valign="top" rowspan="2" bgcolor="#808080" width="110">
+		<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="105" height="561">
+			<param name="movie" value="vrm.swf">
+			<param name="quality" value="High">
+			<embed src="vrm.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="105" height="561"></object>
+		</td>
+		<td bgcolor="#808080"></td>
+		<td valign="top" bgcolor="#808080" width="941">
+		<p align="center"><font color="#0000FF" face="Arial Rounded MT Bold"><b>
+		<span style="font-size: 18pt; font-style: italic">Hardware 
+		implementation and testing</span></b></font></td>
+		<td bgcolor="#808080"></td>
+		<td bgcolor="#808080" height="37"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#999999" width="4">&nbsp;</td>
+		<td valign="top" align="center" bgcolor="#999999" colspan="2">
+		<p align="justify"><b><u>
+		<span style="font-size:13.5pt;font-family:Arial">Implementations </span></u></b></p>
+		<p style="text-align:justify"><span style="font-family:Arial">At the 
+		start of the project we did not have any samples of MEMS sensors so we 
+		decided to implement the drivers and test them out. One of our initial 
+		attempts was to try and use the parallel port of the PC for I/O. This 
+		isuseful if we tried to implement a Pinch glove which will give 
+		information of hand gripping an object or if the fingers are open. For 
+		this we will fix proximity sensors in the fingertips of the glove and as 
+		the fingers come closer it will result in a signal indicating that a 
+		object is being gripped or the hand is closed. It will give a simple 
+		binary output to indicate status of the hand. </span></p>
+		<p style="text-align:justify"><b><u>
+		<span style="font-size:13.5pt;font-family:
+Arial">Parallel port tester </span></u></b></p>
+		<p style="text-align:justify"><span style="font-family:Arial">To see if 
+		the port really worked as a general purpose bidirectional I/O 
+		implementation we decided to fix eight Light emitting diodes on the data 
+		pins shown below.</span></p>
+		<p align="center" style="text-align:center">
+		<img border="0" src="v41.jpg" width="460" height="282"></p>
+		<p align="center" style="text-align:center">
+		<span style="font-family: Arial; font-weight: 700; text-decoration: underline">
+		Fig: Port tester</span></p>
+		<p align="justify"><b><u>
+		<span style="font-size:13.5pt;font-family:Arial">Evaluating 
+		ADIS16003 accelerometer </span></u></b></p>
+		<p style="text-align:justify"><span style="font-family:Arial">Since no 
+		free samples had arrived so far we managed to get on loan ADIS16003 2DOF 
+		accelerometer from analog devices. This accelerometer uses a SPI serial 
+		port giving out a 14 bit digital output. To read the SPI port we either 
+		require a SPI port card or a microcontroller having a SPI master port. 
+		Another way of implementing a SPI port is to use the parallel port and 
+		use GIVEIO along with it. This info we got from ADI website. They have 
+		shown implementation of a reference design kit called ADISEVAL. The fig 
+		below shows ADISEVAL board from ADI and sensor board. </span></p>
+		<p align="center" style="text-align:center">
+		<img border="0" src="v42.jpg" width="602" height="305"></p>
+		<p align="justify"><span style="font-family:Arial">The evaluating software screen shot 
+		is shown below. </span></p>
+		<p align="center" style="text-align:center">
+		<img border="0" src="v43.jpg" width="437" height="314"></p>
+		<p align="justify"><span style="font-family:Arial">Our implementation 
+		of&nbsp; ADISEVAL kit using the schematic from ADI. The circuit diagram is 
+		shown in fig below. </span></p>
+		<p align="justify"><span style="font-family: Arial">
+		<a href="virtual4.html">TOP</a></span></p>
+		<p><span style="font-family:Arial">&nbsp;</span></p>
+		<p align="center">
+		<img border="0" src="v44.jpg" width="733" height="550"></p>
+		<p><span style="font-family:Arial">&nbsp;</span></p>
+		<p align="justify"><span style="font-family:Arial">We implemented the 
+		board successfully but realised there was noise in the data. The sensor 
+		we had with us was a preproduction variety and we assume that there was 
+		some flaw in the sensor. Our implementation is presented below in fig.
+		</span></p>
+		<p align="center" style="text-align:center">
+		<img border="0" src="v45.jpg" width="653" height="375"></p>
+		<p align="center" style="text-align:center">
+		<span style="font-family: Arial; font-weight: 700; text-decoration: underline">
+		Fig: ADISEVAL implementation</span></p>
+		<p style="text-align:justify"><b><u>
+		<span style="font-size:13.5pt;font-family:
+Arial">ZSTAR implementation </span></u></b></p>
+		<p style="text-align:justify"><span style="font-family:Arial">The ZSTAR 
+		design from Freescale semiconductor provides small portable boards with 
+		the capability to demonstrate and evaluate various accelerometer 
+		applications that accommodate the cost-effective, low-power wireless 
+		connection. The ZSTAR design provides two small portable boards with the 
+		capability to demonstrate and evaluate various accelerometer 
+		applications that accommodate the cost-effective, low-power wireless 
+		connection. Salient features include: </span></p>
+		<ol start="1" type="1" style="margin-bottom: 0in">
+			<li class="MsoNormal" style="color: #201D1E; text-align: justify">
+			<span style="font-family:Arial">A multi-axis acceleration sensor 
+			that enables multiple detection situations for potential 
+			applications and includes a g-select feature with a 1.5g-10g range
+			</span></li>
+			<li class="MsoNormal" style="color: #201D1E; text-align: justify">
+			<span style="font-family:Arial">The highly integrated and versatile 
+			MC9S08QG8 MCU includes a background debugging system and on-chip 
+			in-circuit emulation (ICE) with real-time bus capture- providing 
+			single-wire debugging and emulation interface </span></li>
+			<li class="MsoNormal" style="text-align: justify">
+			<span style="font-family:Arial">The MC13191/MC13192/MC13193 </span>
+			</li>
+		</ol>
+		<p class="MsoNormal" style="margin-left:.5in;text-align:justify">
+		<span style="font-family:Arial;color:#201D1E">2.4 GHz low-power 
+		transceivers provide a cost-effective solution for short-range data 
+		links and networks </span></p>
+		<ol start="4" type="1" style="margin-bottom: 0in">
+			<li class="MsoNormal" style="color: #201D1E; text-align: justify">
+			<span style="font-family:Arial">The MC68HC908JW32 MCU is in the 
+			family of the enhanced M68HC08 CPU (CPU08) and is available with a 
+			variety of memory sizes and types, modules and package types </span>
+			</li>
+			<li class="MsoNormal" style="color: #201D1E; text-align: justify">
+			<span style="font-family:Arial">Battery life extension through 
+			low-power, low-current operation </span></li>
+			<li class="MsoNormal" style="color: #201D1E; text-align: justify">
+			<span style="font-family:Arial">Software support for easy 
+			development </span></li>
+		</ol>
+		<p style="text-align:justify"><span style="font-family:Arial">Fig below 
+		shows the ZSTAR implementation. </span></p>
+		<p><img border="0" src="v46.jpg" width="751" height="570"></p>
+		<p>
+		<span style="font-family: Arial; font-weight: 700; text-decoration: underline">
+		Fig: ZSTAR implementation</span></p>
+		<p align="left"><span style="font-family: Arial">
+		<a href="virtual4.html">TOP</a></span></p>
+		<p align="justify">
+		<span style="font-family:Arial; font-weight:700; text-decoration:underline">
+		<font size="4">VR Glove</font></span></p>
+		<p align="justify"><span style="font-family:Arial">The VR glove consists 
+		of an ordinary glove made from cotton cloth and Suede leather. This is 
+		the kind of glove golfer's use during play. The glove has been suitably 
+		modified as shown in fig below. </span></p>
+		<p align="center" style="text-align:center">
+		<img border="0" src="v47.jpg" width="497" height="294"></p>
+		<p align="center" style="text-align:center">
+		<span style="font-family: Arial; font-weight: 700; text-decoration: underline">
+		Fig: VR Glove complete implementation</span></p>
+		<p style="text-align:justify"><span style="font-family:Arial">Flexible 
+		plastic pipes with silver coating on top to avoid interference from 
+		ambient light were used to make analog sensors using an infra red light 
+		sensor and detector combination per finger. It was found that we got a 
+		voltage variation from 0.5V to 2.3V approximately when the fingers were 
+		opened and closed. This was fed to the ADC inputs of port &quot;A&quot; of 
+		ATMEGA16 microcontroller which was programmed to act like a 8 bit ADC 
+		and send the data per input to the serial port implemented using the 
+		MAX232 IC.[MA99] This data was read on the PC serial port and used for 
+		motion of fingers of the VR hand. The ZSTAR design was used with the 
+		glove to give orientation to the VR hand. The USB input was used as a 
+		standard serial port (com2) whereas the MAX232 output was read on serial 
+		port 1 (com 1) of a standard PC. The controller board and programmer 
+		together with their circuit diagrams are shown in fig below. The 
+		software used for programming the controller was ICC AVR from 
+		Imagecraft. An evaluation version was used. </span></p>
+		<p align="center" style="text-align:center">
+		<img border="0" src="v49.jpg" width="774" height="898"></p>
+		<p align="center" style="text-align:center">
+		<img border="0" src="v491.jpg" width="535" height="336"></p>
+		<p align="center" style="text-align:center"><b><u>
+		<span style="font-family:Arial">Fig : ATMEGA16 implementation with 
+		Programmer </span></u></b></p>
+		<p align="center" style="text-align:left">
+		<span style="font-family: Arial"><a href="virtual4.html">TOP</a></span></p>
+		<p align="justify"><b><u>
+		<span style="font-size:13.5pt;font-family:Arial">Gyro implementation for 
+		the VR gun </span></u></b></p>
+		<p align="justify"><span style="font-family:Arial">A Ultra gyration gyro 
+		mouse was brought and taken apart. The PCB with the microcontroller and 
+		the MG110 gyro was removed shown below. </span></p>
+		<p align="center" style="text-align:center">
+		<img border="0" src="v493.jpg" width="743" height="236"></p>
+		<p align="center" style="text-align:center">
+		<span style="font-family: Arial; text-decoration: underline; font-weight: 700">
+		Fig: Ultragyration Gyro</span></p>
+		<p style="text-align:justify"><span style="font-family:Arial">All the 
+		switches and battery connections were removed and appropriate 
+		modifications to the circuits were made. A Digital Multimeter was used 
+		to ohm out the connections to see which contacts are made when the 
+		button is pressed. The PCB has to be firmly attached inside the gun body 
+		and buttons fixed to the trigger. A manual calibration of the cursor to 
+		the gun aiming sight is recommended to be performed using a laser 
+		pointer and a tripod stand. The RF channel of the digital transmitter 
+		also needs to be fixed so that the mouse is immediately detected at the 
+		receiving end. The second PCB inside the mouse needs certain contacts to 
+		be shorted out and the optical sensor removed or disabled to avoid 
+		spurious triggering. The modifications are shown in fig below. </span>
+		</p>
+		<p style="text-align:justify"><b><u>
+		<span style="font-size:13.5pt;font-family:
+Arial">Modifications to the toy weapon </span></u></b></p>
+		<p style="text-align:justify"><span style="font-family:Arial">A toy gun 
+		resembling a 9mm carbine was brought from the local toy shop. The weapon 
+		was opened and all parts that were not required were removed. Both the 
+		PCB from the gyro mouse were suitably mounted inside this weapon. The 
+		MG110 gyro needs to be removed.&nbsp; The proximity sensor was replaced by a 
+		fixed 100k resistor, leaving the LED side blank. The components for 
+		optical mouse were disconnected by following the wiring on the PCB. The 
+		scan button for the SPI wireless transceiver from Cyprus semiconductor 
+		was ohmed out and a separate switch was fixed in its place. The channel 
+		once fixed will generally not get shifted on its own but a scan button 
+		was provided on the outside of the gun in case this happens. A 2mm 
+		inline connector was made to join both the PCB together. The charging 
+		PCB was removed from the charging cradle and modified to be fitted 
+		inside the gun. The onboard voltage regulating device was used for 
+		connecting the battery to the charger. Initially an independent voltage 
+		regulator was used but was deemed not required after the drop across the 
+		resistance was able to bring the charging voltage to within limits of 
+		the Li-on battery pack. The charger used presently is not very fast and 
+		a faster charger for Li-on pack can be used to replace the current one.
+		</span></p>
+		<p style="text-align:justify"><span style="font-family:Arial">The MG110 
+		Gyro module needs to be taken out to be fitted into the barrel of the 
+		gun. A 2 DOF accelerometer needs to be used to correct drift errors in 
+		the gyro by providing a stable reference bias. After all modifications 
+		were completed the weapon was closed and made ready for testing. During 
+		testing we found the device easily mapped to the screen pixels. We 
+		recommend using a PIC controller with a SPI interface to read the MG110 
+		data and accelerometer data and then performing adaptive Kalman 
+		filtering at the microcontroller level and integrating the output&nbsp; to a 
+		Cypress wireless module transceiver. This input can be received&nbsp; at the 
+		other end by a similar transceiver module and fed to a PIC controller 
+		with USB interface. The Controller can then implement a mouse or a 
+		virtual serial port to read the data. </span></p>
+		<p style="text-align:justify"><b><u>
+		<span style="font-size:13.5pt;font-family:
+Arial">Completed weapon </span></u></b></p>
+		<p style="text-align:justify"><span style="font-family:Arial">After 
+		completing all the connections a suitable trigger switch was selected 
+		and fixed to a trigger mechanism. The switch was connected to one of the 
+		programmable buttons. It is recommended that a robust leaf switch be 
+		used in place of the present switch used as the trigger isoperated all 
+		the time. The cue from the button was subsequently used to indicate 
+		trigger press and used in a home brewn game. The fig below shows the 
+		completed gun. </span></p>
+		<p style="text-align:justify"><span style="font-family:Arial">The 
+		battery charging circuit was also modified. There are additional 
+		programmable buttons available that can be used to indicate magazine 
+		fitment, cocking and other indicators for a state of the art military 
+		training simulator. There is also a rotary encoder available that can 
+		also be used for deriving cues for the virtual environment. If 
+		additional functionality is desired the MG110 gyro module can be removed 
+		from this PCB and implemented using a different microcontroller such as 
+		a RCM module from rabbit semiconductor that has an RTOS and many more 
+		advanced features for extended I/O and robust design. </span></p>
+		<p align="center" style="text-align:center">
+		<span lang="EN-US" style="font-size: 11.0pt">
+		<img border="0" src="v494.jpg" width="475" height="266"></span><img border="0" src="v48.gif" width="267" height="264"></p>
+		<p align="center" style="text-align:center"><b><u>
+		<span style="font-family:Arial">Fig : Modified toy gun </span></u></b>
+		</p>
+		<p align="center" style="text-align:left">
+		<span style="font-family: Arial"><a href="virtual4.html">TOP</a></span></p>
+		<p align="justify"><b><u>
+		<span style="font-size:13.5pt;font-family:Arial">Testing the gun </span>
+		</u></b></p>
+		<p style="text-align:justify"><span style="font-family:Arial">On 
+		completion of the gun hardware it was prudent on our part to rest the 
+		gun for correct tracking capability and also for testing drift in gyros 
+		over time. The gun seemed to perform good tracking, the static tests 
+		showed no appreciable drift in gyros after 20 minutes of testing time. 
+		Customised driver can be made using the windows DDK and try and make our 
+		own driver for our emulated gun. We will load the driver at start of the 
+		application and unload it on exiting the application. This will lead to 
+		precision control that we desire. A test plot is presented in fig below.
+		</span></p>
+		<p align="center" style="text-align:center">
+		<img border="0" src="v496.jpg" width="542" height="416"></p>
+		<p align="center" style="text-align:center">
+		<img border="0" src="v497.jpg" width="540" height="414"></p>
+		<p align="center" style="text-align:center">
+		<span style="font-family: Arial; text-decoration: underline; font-weight: 700">
+		Fig: UI for stability testing </span></p>
+		<p align="center" style="text-align:left">
+		<span style="font-family: Arial"><a href="virtual4.html">TOP</a></span></p>
+		<p style="text-align:justify"><span style="font-family:Arial">Since we 
+		require data fusion in both the systems to get accurate output a brief 
+		on how this data fusion takes place is presented below.</span></p>
+		<p style="text-align:justify"><b><u>
+		<span style="font-size:13.5pt;font-family:
+Arial">Data Fusion and Processing Methodologies</span></u></b></p>
+		<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+		<span style="font-family:Arial">Sensors' measurements or data need to be 
+		properly interpreted, processed and fused in order to generate refined 
+		navigation information. The model-based Kalman filter and the model-free 
+		artificial intelligence (AI) methods are two different data processing 
+		and data fusion techniques. The Kalman filter offers a powerful method 
+		for linear data fusion and estimation that are optimal in the 
+		statistical sense if the system models are known. AI methods including 
+		fuzzy logic and neural networks provide a nonlinear mechanism for 
+		high-level inference, data classification, and functional mapping.</span></p>
+		<p style="text-align:justify"><b><u>
+		<span style="font-size:13.5pt;font-family:
+Arial">Kalman Filter</span></u></b></p>
+		<p style="text-align:justify"><span style="font-family:Arial">The Kalman 
+		filter is a linear recursive data processing algorithm that processes 
+		all available measurements, regardless of their precision, to estimate 
+		the current value of the variables of interest, with use of&nbsp; knowledge 
+		of the system and measurement device dynamics, the statistical 
+		description of the system noises, measurement errors, and&nbsp;uncertainty in 
+		the dynamics models, and available information about initial conditions 
+		of the variables of interest. If the input data fits the predefined 
+		linear dynamics and statistical models and prior knowledge is known, the 
+		Kalman filter can provide an optimal, in a minimum variance sense, 
+		estimate of the state vector. Accordingly, the Kalman filter has become 
+		the most common technique for estimating the state of a linear system 
+		particularly in navigation systems. Since the estimation process is 
+		implemented on a computer, the discrete form of the Kalman filter is 
+		generally used. </span></p>
+		<p style="text-align:justify"><b><u>
+		<span style="font-size:13.5pt;font-family:
+Arial">Fuzzy Logic</span></u></b></p>
+		<p style="text-align:justify"><span style="font-family:Arial">The 
+		concept of fuzzy logic was first conceived by Zadeh (1965). As the 
+		complexity of a system increases, it becomes more difficult to make a 
+		precise statement about its behavior and fuzzy logic provides a 
+		framework to deal with such problems naturally (Zadeh, 1965). Resembling 
+		human decision making by using if-then rules and handling ambiguous and 
+		imprecise information by using fuzzy set theory, fuzzy logic provides a 
+		successful way of dealing with complex systems. Fuzzy logic has found 
+		successful applications in decision making, data classification, pattern 
+		recognition, automatic control and etc.</span></p>
+		<p align="center" style="text-align:center">
+		<img border="0" src="v492.gif" width="408" height="409"></p>
+		<p align="center" style="text-align:center"><b><u>
+		<span style="font-family:Arial">Fig: Fuzzy interface system</span></u></b></p>
+		<p style="text-align:justify"><span style="font-family:Arial">In 
+		addition to above we need to use a moving average filter to feed the 
+		fuzzy interface system to get&nbsp;classification data. It is realised that 
+		the traditional approach of using only Kalman filtering is insufficient 
+		for a highly precise system but in the present case it is not required 
+		but if we desire highly accurate inertial data then we need to use 
+		advanced&nbsp; neuro-fuzzy models and fuzzy inference systems&nbsp; to predict INS 
+		drift errors. These are available in some very high end systems. </span>
+		</p>
+		<p style="text-align:justify"><span style="font-family: Arial">
+		<a href="virtual4.html">TOP</a></span></td>
+		<td height="1222"></td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="#808080" colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="index.html">Home</a>&nbsp;&nbsp;
+		<a href="down.html">Downloads</a>&nbsp;&nbsp;
+		<a href="virtual2.html">Technology</a>&nbsp;&nbsp;
+		<a href="virtual3.html">Software</a>&nbsp;&nbsp;
+		<a href="virtual4.html">Hardware</a>&nbsp;&nbsp;
+		<a href="virtual5.html">Results</a></td>
+		<td height="50"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#000000" colspan="3">&nbsp;</td>
+		<td bgcolor="#808080" width="1"></td>
+		<td height="22" width="2"></td>
+	</tr>
+</table>
+
+</body>
+
+</html>
